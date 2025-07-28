@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cédric Bergdoll's Resume</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Libraries for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        #loader {
+            display: none;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #06b6d4; /* cyan-500 */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Styles for printing to ensure it fits on one page */
+        @media print {
+            body, html {
+                margin: 0;
+                padding: 0;
+                width: 210mm;
+                height: 297mm;
+                -webkit-print-color-adjust: exact;
+            }
+            #cv-container {
+                margin: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                max-width: 100% !important;
+            }
+            #print-button-container {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Main Container -->
+    <div id="cv-container" class="max-w-5xl mx-auto my-4 grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-50 rounded-lg shadow-2xl">
+        
+        <!-- Left Column (Main Content) -->
+        <main class="md:col-span-2 p-5 space-y-3">
+            <section>
+                <h3 class="text-lg font-extrabold text-slate-800 mb-2 border-l-4 border-cyan-500 pl-3 flex items-center gap-3"><i class="fa-solid fa-user text-slate-600 text-sm"></i>ABOUT ME</h3>
+                <p class="text-xs leading-normal">
+                    Logistics and transport professional with solid experience in coordination, I am a multimodal transport specialist recognized for my organizational skills and ability to manage priorities. Highly customer-service oriented, I am proficient in the complete management of operations, from quotation to invoicing, as well as in resolving anomalies and handling claims.
+                    <br><br>
+                    <strong class="text-slate-800">Immediately available, I am open to all types of contracts (permanent, fixed-term, temporary).</strong>
+                </p>
+            </section>
+
+            <section>
+                <h3 class="text-lg font-extrabold text-slate-800 mb-3 border-l-4 border-cyan-500 pl-3 flex items-center gap-3"><i class="fa-solid fa-briefcase text-slate-600 text-sm"></i>KEY EXPERIENCES</h3>
+                <div class="space-y-2">
+                    <div class="p-2 rounded-lg border border-slate-200 bg-white shadow-lg">
+                        <p class="text-xs text-slate-500">2024</p>
+                        <h4 class="text-sm font-bold text-slate-800">Logistics Coordinator</h4>
+                        <p class="text-xs font-semibold text-slate-600 mb-1">SAFRAN • Florange, FR</p>
+                        <ul class="list-disc list-inside space-y-1 text-xs">
+                            <li>Supervision of the logistics team, reporting (KPIs), and flow coordination.</li>
+                        </ul>
+                    </div>
+                    <div class="p-2 rounded-lg border border-slate-200 bg-white shadow-lg">
+                        <p class="text-xs text-slate-500">2023</p>
+                        <h4 class="text-sm font-bold text-slate-800">Transport Specialist / Customer Care</h4>
+                        <p class="text-xs font-semibold text-slate-600 mb-1">4FLOW • Trémery, FR</p>
+                         <ul class="list-disc list-inside space-y-1 text-xs">
+                            <li>Transport planning and chartering with road carriers.</li>
+                            <li>Anomaly management and client reporting.</li>
+                        </ul>
+                    </div>
+                     <div class="p-2 rounded-lg border border-slate-200 bg-white shadow-lg">
+                        <p class="text-xs text-slate-500">2022</p>
+                        <h4 class="text-sm font-bold text-slate-800">Air Freight Import Agent</h4>
+                        <p class="text-xs font-semibold text-slate-600 mb-1">DHL • Nancy, FR</p>
+                         <ul class="list-disc list-inside space-y-1 text-xs">
+                            <li>Planning, chartering, quoting, and checking customs documents.</li>
+                        </ul>
+                    </div>
+                    <div class="p-2 rounded-lg border border-slate-200 bg-white shadow-lg">
+                        <p class="text-xs text-slate-500">2016 - 2019</p>
+                        <h4 class="text-sm font-bold text-slate-800">LUXAIRCARGO • Findel, LU</h4>
+                        <div class="mt-1">
+                            <p class="font-semibold text-slate-700 text-xs">Import Manager (2017 - 2019)</p>
+                            <ul class="list-disc list-inside space-y-1 text-xs mt-1">
+                                <li>Management of a 6-agent team and customer relationship management.</li>
+                                <li>Document management for imports (AWB, etc.).</li>
+                             </ul>
+                        </div>
+                        <div class="mt-1">
+                            <p class="font-semibold text-slate-700 text-xs">Import Operations Agent (2016 - 2017)</p>
+                            <ul class="list-disc list-inside space-y-1 text-xs mt-1">
+                                <li>Data entry and creation of transport documents.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-2 rounded-lg border border-slate-200 bg-white shadow-lg">
+                        <p class="text-xs text-slate-500">2014 - 2015</p>
+                        <h4 class="text-sm font-bold text-slate-800">Transport Agent</h4>
+                        <p class="text-xs font-semibold text-slate-600 mb-1">UPS • Contern, LU</p>
+                        <ul class="list-disc list-inside space-y-1 text-xs">
+                            <li>Counter management.</li>
+                            <li>Handling of pickup requests and delivery appointments.</li>
+                            <li>Issuance of customs documents.</li>
+                        </ul>
+                    </div>
+                     <div class="p-2 rounded-lg border border-slate-200 bg-white shadow-lg">
+                        <p class="text-xs text-slate-500">2007 - 2009</p>
+                        <h4 class="text-sm font-bold text-slate-800">SWISSPORT • Findel, LU</h4>
+                        <div class="mt-1">
+                            <p class="font-semibold text-slate-700 text-xs">Senior Traffic Agent (2008-2009)</p>
+                            <ul class="list-disc list-inside space-y-1 text-xs mt-1">
+                                <li>Supervision of the import/export RFS department.</li>
+                             </ul>
+                        </div>
+                        <div class="mt-1">
+                            <p class="font-semibold text-slate-700 text-xs">Traffic Agent (2007-2008)</p>
+                            <ul class="list-disc list-inside space-y-1 text-xs mt-1">
+                                <li>Issuance and control of import documents.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Column (Personal Info) -->
+        <aside class="md:col-span-1 bg-gradient-to-b from-slate-800 to-slate-900 text-white p-5 rounded-lg shadow-2xl flex flex-col">
+            <div class="flex flex-col items-center text-center">
+                <img src="https://i.postimg.cc/XvCypMmh/photo.jpg" alt="Profile picture of Cédric Bergdoll" class="w-24 h-32 rounded-xl border-4 border-cyan-400 shadow-lg mb-2 object-cover">
+                <h1 class="text-xl font-bold">Cédric Bergdoll</h1>
+                <p class="text-sm text-slate-300">41 years old</p>
+                <h2 class="text-base font-medium text-cyan-400 mt-1 text-center">Administrative role in the transport and logistics sector</h2>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="index.html" class="inline-block bg-slate-700 text-slate-200 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-slate-600 transition-colors">
+                    <i class="fa-solid fa-globe mr-2"></i>Version Française
+                </a>
+            </div>
+
+            <div class="mt-3">
+                <h3 class="text-base font-semibold border-b-2 border-cyan-400 pb-1 mb-2 flex items-center gap-2"><i class="fa-solid fa-address-book text-sm"></i>CONTACT</h3>
+                <ul class="space-y-1 text-xs">
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-phone w-4 mr-2 text-cyan-400"></i>
+                        <span>+33 7 64 82 08 98</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-envelope w-4 mr-2 text-cyan-400"></i>
+                        <a href="mailto:cedric.bergdoll@gmail.com" class="hover:text-cyan-300 break-all">cedric.bergdoll@gmail.com</a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-location-dot w-4 mr-2 text-cyan-400"></i>
+                        <a href="https://www.google.com/maps/place/Montois-la-Montagne" target="_blank" class="hover:text-cyan-300">Montois-la-Montagne, FR</a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-brands fa-linkedin w-4 mr-2 text-cyan-400"></i>
+                        <a href="https://www.linkedin.com/in/cedric-bergdoll/" target="_blank" class="hover:text-cyan-300 break-all">in/cedric-bergdoll</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mt-3">
+                <h3 class="text-base font-semibold border-b-2 border-cyan-400 pb-1 mb-2 flex items-center gap-2"><i class="fa-solid fa-star text-sm"></i>SKILLS</h3>
+                <div class="flex flex-wrap gap-1 text-xs">
+                    <span class="bg-slate-700 text-slate-200 font-medium px-2 py-1 rounded-full shadow-sm">Planning</span>
+                    <span class="bg-slate-700 text-slate-200 font-medium px-2 py-1 rounded-full shadow-sm">Chartering</span>
+                    <span class="bg-slate-700 text-slate-200 font-medium px-2 py-1 rounded-full shadow-sm">Customer Service</span>
+                    <span class="bg-slate-700 text-slate-200 font-medium px-2 py-1 rounded-full shadow-sm">Organization</span>
+                    <span class="bg-slate-700 text-slate-200 font-medium px-2 py-1 rounded-full shadow-sm">Multimodal Transport</span>
+                    <span class="bg-slate-700 text-slate-200 font-medium px-2 py-1 rounded-full shadow-sm">Anomaly Management</span>
+                    <span class="bg-slate-700 text-slate-200 font-medium px-2 py-1 rounded-full shadow-sm">SAP MM & SD</span>
+                    <span class="bg-slate-700 text-slate-200 font-medium px-2 py-1 rounded-full shadow-sm">WMS BEXT</span>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <h3 class="text-base font-semibold border-b-2 border-cyan-400 pb-1 mb-2 flex items-center gap-2"><i class="fa-solid fa-language text-sm"></i>LANGUAGES</h3>
+                <ul class="space-y-1 text-xs">
+                    <li><strong>French:</strong> Native</li>
+                    <li><strong>English:</strong> C1 Level (Fluent)</li>
+                </ul>
+            </div>
+
+            <div class="mt-3">
+                <h3 class="text-base font-semibold border-b-2 border-cyan-400 pb-1 mb-2 flex items-center gap-2"><i class="fa-solid fa-certificate text-sm"></i>CERTIFICATIONS</h3>
+                <ul class="space-y-1 text-xs">
+                    <li>CACES 1B, 3, 5</li>
+                    <li>ATEX 1</li>
+                    <li>IATA DGR</li>
+                    <li>ADR 1.3</li>
+                </ul>
+            </div>
+            
+            <div class="mt-3">
+                <h3 class="text-base font-semibold border-b-2 border-cyan-400 pb-1 mb-2 flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-sm"></i>EDUCATION</h3>
+                <div class="space-y-2 text-xs">
+                     <div>
+                        <h4 class="font-bold">Higher Technician in Transport and Logistics</h4>
+                        <p class="text-xs text-slate-300">ISTELI/AF-IFTIM • 2006</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Operations Technician in Goods Transport</h4>
+                        <p class="text-xs text-slate-300">CFPA • 2005</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Conteneur pour le bouton, à l'extérieur du CV pour ne pas être imprimé -->
+    <div id="print-button-container" class="text-center my-8">
+        <button id="download-pdf" class="bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-cyan-700 transition-colors flex items-center justify-center mx-auto">
+            <span id="button-text"><i class="fa-solid fa-download mr-2"></i>Download as PDF</span>
+            <div id="loader"></div>
+        </button>
+    </div>
+
+    <script>
+        document.getElementById('download-pdf').addEventListener('click', function () {
+            const button = this;
+            const buttonText = document.getElementById('button-text');
+            const loader = document.getElementById('loader');
+            const cvContainer = document.getElementById('cv-container');
+            const printButtonContainer = document.getElementById('print-button-container');
+
+            // Afficher le loader et cacher le texte du bouton
+            buttonText.style.display = 'none';
+            loader.style.display = 'block';
+            button.disabled = true;
+
+            // Cacher le conteneur du bouton pour qu'il n'apparaisse pas dans le PDF
+            printButtonContainer.style.display = 'none';
+
+            const opt = {
+                margin:       [0.1, 0, 0.1, 0], // marges verticales minimales
+                filename:     'Resume_Cedric_Bergdoll.pdf',
+                image:        { type: 'jpeg', quality: 1.0 },
+                html2canvas:  { scale: 3, useCORS: true, logging: true, letterRendering: true },
+                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Utiliser html2pdf pour générer le PDF
+            html2pdf().from(cvContainer).set(opt).save().then(() => {
+                // Rétablir l'état initial du bouton et réafficher le conteneur du bouton
+                buttonText.style.display = 'inline';
+                loader.style.display = 'none';
+                button.disabled = false;
+                printButtonContainer.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
+
